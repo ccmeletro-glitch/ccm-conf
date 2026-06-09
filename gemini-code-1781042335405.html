@@ -3,113 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Abas</title>
+    <title>Meu Site - Início</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Container Principal do Fichário */
-        .container-abas {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 800px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        /* Esconde os botões de rádio originais do HTML */
-        .radio-aba {
-            display: none;
-        }
-
-        /* Grupo de Abas (Os botões/divisórias) */
-        .lista-abas {
-            display: flex;
-            background-color: #e4e6eb;
-            border-bottom: 2px solid #ccc;
-        }
-
-        .rotulo-aba {
-            padding: 15px 25px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #555;
-            transition: background 0.3s;
-            flex: 1;
-            text-align: center;
-        }
-
-        .rotulo-aba:hover {
-            background-color: #d8dadf;
-        }
-
-        /* Estilo do Conteúdo das Páginas */
-        .conteudo-aba {
-            padding: 30px;
-            display: none; /* Esconde todas as páginas por padrão */
-            line-height: 1.6;
-        }
-
-        /* LÓGICA DA MÁGICA: Quando a aba for selecionada, mude o visual e mostre o conteúdo */
+        body { font-family: sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 800px; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
         
-        /* Aba 1 ativa */
-        #aba1:checked ~ .lista-abas .rotulo-aba[for="aba1"],
-        #aba2:checked ~ .lista-abas .rotulo-aba[for="aba2"],
-        #aba3:checked ~ .lista-abas .rotulo-aba[for="aba3"] {
-            background-color: white;
-            color: #0074C0;
-            border-bottom: 3px solid #0074C0;
-            margin-bottom: -2px;
-        }
-
-        /* Mostra o conteúdo respectivo da aba marcada */
-        #aba1:checked ~ #conteudo-home,
-        #aba2:checked ~ #conteudo-servicos,
-        #aba3:checked ~ #conteudo-contato {
-            display: block;
-        }
+        /* Menu de Navegação superior (As Abas) */
+        .menu-navegacao { display: flex; background-color: #333; }
+        .menu-navegacao a { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-weight: bold; }
+        .menu-navegacao a:hover { background-color: #555; }
+        .menu-navegacao a.ativa { background-color: #0074C0; } /* Cor azul na aba atual */
+        
+        .conteudo { padding: 30px; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-    <div class="container-abas">
-        <input type="radio" id="aba1" name="grupo-abas" class="radio-aba" checked>
-        <input type="radio" id="aba2" name="grupo-abas" class="radio-aba">
-        <input type="radio" id="aba3" name="grupo-abas" class="radio-aba">
-
-        <div class="lista-abas">
-            <label for="aba1" class="rotulo-aba">Início</label>
-            <label for="aba2" class="rotulo-aba">Serviços</label>
-            <label for="aba3" class="rotulo-aba">Contato</label>
+    <div class="container">
+        <!-- Menu com links para as outras páginas -->
+        <div class="menu-navegacao">
+            <a href="index.html" class="ativa">🏠 Início</a>
+            <a href="servicos.html">🛠️ Serviços</a>
+            <a href="contato.html">📞 Contato</a>
         </div>
 
-        <div id="conteudo-home" class="conteudo-aba">
-            <h2>🏠 Bem-vindo à Página Inicial</h2>
-            <p>Este é o conteúdo da primeira aba. Você pode colocar textos, imagens, tabelas ou qualquer outra estrutura aqui dentro.</p>
-        </div>
-
-        <div id="conteudo-servicos" class="conteudo-aba">
-            <h2>🛠️ Nossos Serviços</h2>
-            <p>Aqui você pode listar o que você faz. Por exemplo:</p>
-            <ul>
-                <li>Análise de Confiabilidade</li>
-                <li>Manutenção de Sistemas</li>
-                <li>Consultoria Técnica</li>
-            </ul>
-        </div>
-
-        <div id="conteudo-contato" class="conteudo-aba">
-            <h2>📞 Entre em Contato</h2>
-            <p>Se você gostou dessa estrutura, deixe seu comentário ou envie um e-mail para suporte@exemplo.com.</p>
+        <div class="conteudo">
+            <h2>Bem-vindo à Página Inicial!</h2>
+            <p>Esta é a primeira aba do nosso site estruturado.</p>
         </div>
     </div>
 
